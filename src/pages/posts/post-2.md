@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 title: My Second Blog Post
 author: Astro Learner
 description: "After some Astro success, I couldn't stop!"

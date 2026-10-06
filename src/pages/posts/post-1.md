@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 title: "My First Blog Post"
 pubDate: 2026-10-04
 description: "This is the first post of my new Elalria blog."
