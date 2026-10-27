@@ -1,68 +1,45 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
-import '../styles/global.css';
-
-const pageTitle = "About Our Founder";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "About Elaria";
 
 const identity = {
   firstName:"Marcia",
   country: "USA",
+  state: "California",
   occupation: "web developer",
-  hobbies: ["fitness", "line dancing", "reading"],
+  hobbies: ["group fitness classes", "line dancing", "reading"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript",  "Astro", "Web Essays"]
-const skillColor = "crimson";
+const skillColor = "limegreen";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars={{skillColor, fontWeight, textCase}}>
+<BaseLayout pageTitle={pageTitle}>
+	<style define:vars={{skillColor, fontWeight, textCase}}>
 			h1{
-				color: purple;
-				font-size: 3rem;
+				color: limegreen;
+				font-size: 2.5rem;
 			}
 			.skill {
 			  color: var(--skillColor);
 			  font-weight: var(--fontWeight);
 			  text-transform: var(--textCase);
 			}
-		</style>
-	</head>
-	<body>
-        <Header />        
-		<h1>{pageTitle}</h1>
-		<h2>... and my new Astro site!!</h2>
-         <p>I am working through Astro's introductory tutorial. 
-            This is the second page on my website, and it's the first one I built myself!</p>
-          <p>This site will update as I complete more of the tutorials, 
-         so keep checking back and see how my journey is going!</p>
-
+		</style> 
+		<h1>About our Founder</h1>
 	<p>Here are a few facts about Elaria's editor:</p>
 <ul>
-  <li>My name is {identity.firstName}.</li>
-  <li>I live in the {identity.country} and I work as a {identity.occupation}.</li>
+  <li>Her name is {identity.firstName}.</li>
+  <li>She lives in southern {identity.state} and works as a {identity.occupation}.</li>
   {identity.hobbies.length >= 2 &&
-    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+    <li>She likes to be active, and her favorite hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
   }
 </ul>
 <p>My skills are:</p>
 <ul>
   {skills.map((skill) => <li  class="skill">{skill}</li>)}
-</ul>	 
-  <Footer />
-  <script>
-	import '../scripts/menu.js';
-  </script>
-</body>
-</html>
+</ul>
+</BaseLayout>
+
+
