@@ -12,8 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^6.1.1",
     "@astrojs/rss": "^4.0.19",
-    "astro": "^7.3.5"
+    "astro": "^7.3.5",
+    "preact": "^11.1.0"
   },
   "allowScripts": {
     "esbuild": true
